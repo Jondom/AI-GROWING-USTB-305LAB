@@ -100,12 +100,12 @@ while cap.isOpened(): # True:
         draw_text(face_coordinates, rgb_image, emotion_mode,
                   color, 0, -45, 1, 1)
 
-    x1 = face_coordinates[0]  #找到脸部边框的位置，并确定替换图片边界
-    y1 = face_coordinates[1]
-    w  = face_coordinates[2]
-    h  = face_coordinates[3]
-    x2 = x1 + w
-    y2 = y1 + h
+    	x1 = face_coordinates[0]  #找到脸部边框的位置，并确定替换图片边界
+    	y1 = face_coordinates[1]
+    	w  = face_coordinates[2]
+    	h  = face_coordinates[3]
+    	x2 = x1 + w
+    	y2 = y1 + h
     bgr_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2BGR)
     bgr_image[y1:y2, x1:x2] = cv2.resize(emoji,(h,w))  #改变表情包图片大小并替换
     cv2.imshow('window_frame',bgr_image)
